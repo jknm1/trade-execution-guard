@@ -2,139 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trade Execution Guard — Early Access</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111722;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0b0b0f;
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, #121826, var(--bg));
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
     }
 
     .container {
-      max-width: 600px;
-      padding: 40px 24px;
-      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
     h1 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #9ca3af;
-      margin-bottom: 32px;
+    p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     ul {
       list-style: none;
-      margin-bottom: 32px;
+      margin-bottom: 22px;
     }
 
     ul li {
-      margin: 10px 0;
-      font-size: 1rem;
-    }
-
-    .who {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      margin-bottom: 32px;
-    }
-
-    .form {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
       display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
     }
 
-    input[type="email"] {
-      padding: 12px 14px;
-      width: 260px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      font-size: 0.95rem;
+    ul li::before {
+      content: "✔";
+      color: var(--accent);
+      font-size: 0.9rem;
     }
 
-    button {
-      padding: 12px 18px;
-      border-radius: 6px;
-      border: none;
-      background: #2563eb;
+    .badge {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
       color: white;
-      font-size: 0.95rem;
-      cursor: pointer;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      margin-bottom: 10px;
     }
 
-    button:hover {
-      background: #1d4ed8;
+    .cta:hover {
+      background: var(--accent-hover);
     }
 
-    .note {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin-top: 10px;
+    .small {
+      font-size: 0.7rem;
+      text-align: center;
+      color: var(--muted);
     }
 
-    footer {
-      margin-top: 40px;
-      font-size: 0.8rem;
-      color: #6b7280;
+    .divider {
+      height: 1px;
+      background: #1f2937;
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Stop breaking your trading rules.</h1>
+    <span class="badge">🚀 Early Access</span>
 
-    <p class="subtitle">
-      Trade Execution Guard blocks bad trades <strong>before</strong> you place them.
+    <h1>Trade Discipline, Enforced.</h1>
+
+    <p>
+      Most traders don’t fail because of bad strategies —  
+      they fail because they break their own rules under pressure.
+    </p>
+
+    <p>
+      Trade Execution Guard validates every trade <strong>before execution</strong>,
+      enforcing your risk rules so emotion never overrides discipline.
     </p>
 
     <ul>
-      <li>✔ Enforces your risk rules automatically</li>
-      <li>✔ Rejects trades that violate your strategy</li>
-      <li>✔ Removes emotion from execution</li>
+      <li>Enforces risk rules before entry</li>
+      <li>Blocks emotional & revenge trades</li>
+      <li>Protects capital automatically</li>
     </ul>
 
-    <p class="who">
-      Built for traders who already have a strategy — but want <strong>rule enforcement</strong>, not signals.
+    <div class="divider"></div>
+
+    <a href="#" class="cta">Join Early Access</a>
+
+    <p class="small">
+      Limited to first 500 traders • No spam • Serious traders only
     </p>
-
-    <form class="form">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Join the waitlist</button>
-    </form>
-
-    <p class="note">
-      Early users get priority access and direct input into features.
-    </p>
-
-    <footer>
-      Currently in private development<br/>
-      API-first • Discipline-driven • No signals • No hype
-    </footer>
   </div>
 
 </body>
